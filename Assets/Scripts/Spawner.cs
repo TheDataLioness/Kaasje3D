@@ -12,6 +12,7 @@ namespace DefaultNamespace
         private GameObject lastSpawned = null;
 
         private int currentSpawnX = 20;
+        private int lastSpawnKey = 0;
 
         private void Start()
         {
@@ -20,6 +21,11 @@ namespace DefaultNamespace
             for (int i = 0; i < 5; i++)
             {
                 int key = random.Next(0, amount);
+                while (key == lastSpawnKey)
+                {
+                    key = random.Next(0, amount);
+                }
+                lastSpawnKey = key;
                 GameObject tileObject = GameObjects[key];
                 GameObject spawnObject = Instantiate(tileObject, new Vector3(currentSpawnX, 0,0), new Quaternion(0,0,0,0));
                 lastSpawned = spawnObject;
@@ -36,6 +42,13 @@ namespace DefaultNamespace
                 Random random = new Random();
                 int amount = GameObjects.Length;
                 int key = random.Next(0, amount);
+                while (key == lastSpawnKey)
+                {
+                    key = random.Next(0, amount);
+                }
+
+                lastSpawnKey = key;
+                
                 GameObject tileObject = GameObjects[key];
                 GameObject spawnObject = Instantiate(tileObject, new Vector3(currentSpawnX, 0,0), new Quaternion(0,0,0,0));
                 lastSpawned = spawnObject;

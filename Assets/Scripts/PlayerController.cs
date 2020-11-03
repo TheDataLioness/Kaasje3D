@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public float gravityScale;
 
     public Text counter;
+    public Text highscoreCounter;
     public Text deathMessage;
     public AudioSource eatSound;
 
@@ -28,6 +29,8 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         _instance = this;
+        int highScore = PlayerPrefs.GetInt("highscore", 0);
+        highscoreCounter.text = highScore.ToString();
     }
 
     // Update is called once per frame
@@ -74,6 +77,7 @@ public class PlayerController : MonoBehaviour
         {
             eatSound.Play();
             
+            // Display Current Score
             String text = counter.text;
             int textNum = 0;
             int.TryParse(text, out textNum);
@@ -81,6 +85,7 @@ public class PlayerController : MonoBehaviour
             counter.text = textNum.ToString();
             moveSpeed += 0.1f;
             Destroy(collider.gameObject);
+            StoreHighscore(textNum);
         }
 
         if (collider.tag.Equals("Die"))
@@ -88,6 +93,19 @@ public class PlayerController : MonoBehaviour
             isDead = true;
             deathMessage.text = "You Died\nPress \"Space\" to try again.";
         }
+    }
+    
+    void StoreHighscore(int newHighscore)
+    {
+        int oldHighscore = PlayerPrefs.GetInt("highscore", 0);
+        if (newHighscore > oldHighscore)
+        {
+            PlayerPrefs.SetInt("highscore", newHighscore);
+            PlayerPrefs.Save();
+            highscoreCounter.text = newHighscore.ToString();
+        }
+
+
     }
 
     public static PlayerController getInstance() => _instance;
