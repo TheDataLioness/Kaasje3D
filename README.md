@@ -6,16 +6,19 @@ So the whole description will be in Dutch.
 ---
 
 ### Wat is Kaasje3D?
-Kaasje3D is een endless 3D platformer gebasseerd op de populaire mobiele game "Kaasje". 
-<br>Het doel is om zoveel mogelijk kaasjes te verzamelen en je record te verbreken.
-<br><br>
-Het level word random gegenereerd uit 6 verschillende "tiles".
-Deze tiles zijn stukken map die achter elkaar worden gezet zodat je hier overheen kan komen.
-<br><br>
+
+Kaasje3D is een endless 3D platformer gebasseerd op de populaire mobiele game "Kaasje". <br>
+Het doel is om zoveel mogelijk kaasjes te verzamelen en je record te verbreken.<br>
+
+Het level word random gegenereerd uit 6 verschillende "tiles".<br>
+Deze tiles zijn stukken map die achter elkaar worden gezet zodat je hier overheen kan komen.<br>
+
 Ook zijn er een aantal dodelijke objecten die de weg voor je wat lastiger maken.
 Dit zijn bijvoorbeeld de spikes of het rond slingerend mes.
+
 ---
 ### Wat heb ik geleerd?
+
 Ik heb de basis van Unity en Blender geleerd.
 Ookal heeft Blender niks met programmeren te maken is het toch wel handig om dat ook te kunnen begrijpen.
 Daarnaast heb ik ook heel veel van Unity geleerd.
